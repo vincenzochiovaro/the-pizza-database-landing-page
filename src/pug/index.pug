@@ -5,240 +5,229 @@ html(lang='en')
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='')
+        meta(name='description', content='Explore The Pizza Database: comprehensive pizza recipes, ingredient guides, regional styles, and expert tips for making authentic pizza at home.')
+        meta(name='keywords', content='pizza database, pizza recipes, pizza ingredients, pizza dough, pizza styles, authentic pizza, homemade pizza, pizza making, Italian pizza, Neapolitan pizza')
+        meta(name='author', content='The Pizza Database')
+        meta(property='og:type', content='website')
+        meta(property='og:url', content='https://yoursite.com/')
+        meta(property='og:title', content='The Pizza Database - Recipes, Ingredients & Styles')
+        meta(property='og:description', content='Explore comprehensive pizza recipes, ingredient guides, regional styles, and expert tips for making authentic pizza at home.')
+        meta(property='og:image', content='https://yoursite.com/assets/img/og-preview.jpg')
+        meta(property='og:image:width', content='1200')
+        meta(property='og:image:height', content='630')
+        meta(name='twitter:card', content='summary_large_image')
+        meta(name='twitter:url', content='https://yoursite.com/')
+        meta(name='twitter:title', content='The Pizza Database - Recipes, Ingredients & Styles')
+        meta(name='twitter:description', content='Explore comprehensive pizza recipes, ingredient guides, regional styles, and expert tips for making authentic pizza at home.')
+        meta(name='twitter:image', content='https://yoursite.com/assets/img/og-preview.jpg')
 
-        title Landing Page - Start Bootstrap Theme
+        title The Pizza Database - Recipes, Ingredients & Styles
 
-        // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
-
-        // Bootstrap icons
+        link(rel='icon', type='image/png', sizes='32x32', href='assets/favicon-32x32.png')
+        link(rel='icon', type='image/png', sizes='16x16', href='assets/favicon-16x16.png')
+        link(rel='apple-touch-icon', sizes='180x180', href='assets/apple-touch-icon.png')
+        link(rel='preload', href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', as='style')
         link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet', type='text/css')
-
-        // Google fonts
         link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', rel='stylesheet', type='text/css')
-
-        // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
     body
 
         // Navigation
-        nav.navbar.navbar-light.bg-light.static-top
+        nav.navbar.navbar-light.bg-light.static-top(role='navigation', aria-label='Main navigation')
             .container
-                a.navbar-brand(href='#!') Start Bootstrap
+                a.navbar-brand(href='#!') The Pizza Database
                 a.btn.btn-primary(href='#signup') Sign Up
 
         // Masthead
-        header.masthead
+        header.masthead(role='banner')
             .container.position-relative
                 .row.justify-content-center
                     .col-xl-6
                         .text-center.text-white
                             // Page heading
-                            h1.mb-5 Generate more leads with a professional landing page!
+                            h1.mb-5 Discover the Ultimate Pizza Database!
 
                             // Signup form
-
-                            // * * * * * * * * * * * * * * *
-                            // * * SB Forms Contact Form * *
-                            // * * * * * * * * * * * * * * *
-
-                            // This form is pre-integrated with SB Forms.
-                            // To make this form functional, sign up at
-                            // https://startbootstrap.com/solution/contact-forms
-                            // to get an API token!
-
-                            form.form-subscribe#contactForm(data-sb-form-api-token='API_TOKEN')
+                            form.form-subscribe#contactForm(data-sb-form-api-token='API_TOKEN', aria-label='Newsletter signup form')
 
                                 // Email address input
                                 .row
                                     .col
-                                        input#emailAddress.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
-                                        .invalid-feedback.text-white(data-sb-feedback='emailAddress:required')
+                                        label.visually-hidden(for='emailAddress') Email Address
+                                        input#emailAddress.form-control.form-control-lg(
+                                            type='email', 
+                                            placeholder='Email Address', 
+                                            data-sb-validations='required,email',
+                                            aria-required='true',
+                                            aria-describedby='emailAddress-feedback'
+                                        )
+                                        .invalid-feedback.text-white#emailAddress-feedback(data-sb-feedback='emailAddress:required')
                                             | Email Address is required.
                                         .invalid-feedback.text-white(data-sb-feedback='emailAddress:email')
-                                            | Email Address Email is not valid.
+                                            | Email Address is not valid.
 
                                     .col-auto
-                                        button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
+                                        button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit', aria-label='Submit email address') Submit
 
                                 // Submit success message
-                                //
-                                // This is what your users will see when the form
-                                // has successfully submitted
-
-                                #submitSuccessMessage.d-none
+                                #submitSuccessMessage.d-none(role='alert', aria-live='polite')
                                     .text-center.mb-3
                                         .fw-bolder Form submission successful!
                                         p To activate this form, sign up at
                                         a.text-white(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
 
                                 // Submit error message
-                                //
-                                // This is what your users will see when there is
-                                // an error submitting the form
+                                #submitErrorMessage.d-none(role='alert', aria-live='assertive')
+                                    .text-center.text-danger.mb-3 Error sending message!
+        main(role='main')
+            
+            // Features Section
+            section.features-icons.bg-light.text-center(role='region', aria-labelledby='features-heading')
+                .container
+                    h2#features-heading.visually-hidden Key Features
+                    .row
+                        .col-lg-4
+                            .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+                                .features-icons-icon.d-flex
+                                    i.bi-window.m-auto.text-primary(aria-hidden='true')
+                                h3 Comprehensive Database
+                                p.lead.mb-0 Access hundreds of pizza recipes from around the world, all in one place!
+                        .col-lg-4
+                            .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+                                .features-icons-icon.d-flex
+                                    i.bi-layers.m-auto.text-primary(aria-hidden='true')
+                                h3 Regional Styles
+                                p.lead.mb-0 Explore authentic pizza styles from Neapolitan to New York and beyond!
+                        .col-lg-4
+                            .features-icons-item.mx-auto.mb-0.mb-lg-3
+                                .features-icons-icon.d-flex
+                                    i.bi-terminal.m-auto.text-primary(aria-hidden='true')
+                                h3 Easy to Search
+                                p.lead.mb-0 Find the perfect recipe by ingredient, style, or cooking method!
 
-                                #submitErrorMessage.d-none
+            // Image Showcases
+            section.showcase(role='region', aria-labelledby='showcase-heading')
+                .container-fluid.p-0
+                    h2#showcase-heading.visually-hidden Learn More About Our Database
+                    .row.g-0
+                        .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-1.jpg');", role='img', aria-label='Pizza ingredients on wooden table')
+                        .col-lg-6.order-lg-1.my-auto.showcase-text
+                            h3 Authentic Recipes
+                            p.lead.mb-0
+                                | Every recipe in our database is carefully researched and tested. From traditional Italian methods to modern innovations, discover the techniques that make great pizza.
+                    .row.g-0
+                        .col-lg-6.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-2.jpg');", role='img', aria-label='Fresh pizza with melted cheese and basil')
+                        .col-lg-6.my-auto.showcase-text
+                            h3 Ingredient Guides
+                            p.lead.mb-0
+                                | Learn about the best flours, cheeses, tomatoes, and toppings. Our detailed ingredient guides help you source and select the perfect components for your pizza.
+                    .row.g-0
+                        .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-3.jpg');", role='img', aria-label='Pizza being prepared in wood-fired oven')
+                        .col-lg-6.order-lg-1.my-auto.showcase-text
+                            h3 Step-by-Step Instructions
+                            p.lead.mb-0
+                                | From mixing dough to achieving the perfect char, our detailed instructions guide you through every step of the pizza-making process with confidence.
+
+            // Testimonials
+            section.testimonials.text-center.bg-light(role='region', aria-labelledby='testimonials-heading')
+                .container
+                    h2#testimonials-heading.mb-5 What pizza lovers are saying...
+                    .row
+                        .col-lg-4
+                            .testimonial-item.mx-auto.mb-5.mb-lg-0
+                                img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-1.jpg', alt='Portrait of Margaret E.')
+                                h3.h5 Margaret E.
+                                p.font-weight-light.mb-0 "This database is incredible! I've made 10 different pizzas and they all turned out amazing!"
+                        .col-lg-4
+                            .testimonial-item.mx-auto.mb-5.mb-lg-0
+                                img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-2.jpg', alt='Portrait of Fred S.')
+                                h3.h5 Fred S.
+                                p.font-weight-light.mb-0
+                                    | "Finally, a comprehensive resource for pizza recipes. The ingredient guides are especially helpful!"
+                        .col-lg-4
+                            .testimonial-item.mx-auto.mb-5.mb-lg-0
+                                img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-3.jpg', alt='Portrait of Sarah W.')
+                                h3.h5 Sarah W.
+                                p.font-weight-light.mb-0 "I've learned so much about different pizza styles. This is a must-have for any pizza enthusiast!"
+
+            // Call to Action
+            section#signup.call-to-action.text-white.text-center(role='region', aria-labelledby='signup-heading')
+                .container.position-relative
+                    .row.justify-content-center
+                        .col-xl-6
+                            h2#signup-heading.mb-4 Ready to explore? Join our community!
+                            // Signup form
+                            form.form-subscribe#contactFormFooter(data-sb-form-api-token='API_TOKEN', aria-label='Footer newsletter signup form')
+
+                                // Email address input
+                                .row
+                                    .col
+                                        label.visually-hidden(for='emailAddressBelow') Email Address
+                                        input#emailAddressBelow.form-control.form-control-lg(
+                                            type='email', 
+                                            placeholder='Email Address', 
+                                            data-sb-validations='required,email',
+                                            aria-required='true',
+                                            aria-describedby='emailAddressBelow-feedback'
+                                        )
+                                        .invalid-feedback.text-white#emailAddressBelow-feedback(data-sb-feedback='emailAddressBelow:required')
+                                            | Email Address is required.
+                                        .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:email')
+                                            | Email Address is not valid.
+
+                                    .col-auto
+                                        button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit', aria-label='Submit email address') Submit
+
+                                // Submit success message
+                                #submitSuccessMessage.d-none(role='alert', aria-live='polite')
+                                    .text-center.mb-3
+                                        .fw-bolder Form submission successful!
+                                        p To activate this form, sign up at
+                                        a.text-white(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
+
+                                // Submit error message
+                                #submitErrorMessage.d-none(role='alert', aria-live='assertive')
                                     .text-center.text-danger.mb-3 Error sending message!
 
-        // Icons Grid
-        section.features-icons.bg-light.text-center
-            .container
-                .row
-                    .col-lg-4
-                        .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-                            .features-icons-icon.d-flex
-                                i.bi-window.m-auto.text-primary
-                            h3 Fully Responsive
-                            p.lead.mb-0 This theme will look great on any device, no matter the size!
-                    .col-lg-4
-                        .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-                            .features-icons-icon.d-flex
-                                i.bi-layers.m-auto.text-primary
-                            h3 Bootstrap 5 Ready
-                            p.lead.mb-0 Featuring the latest build of the new Bootstrap 5 framework!
-                    .col-lg-4
-                        .features-icons-item.mx-auto.mb-0.mb-lg-3
-                            .features-icons-icon.d-flex
-                                i.bi-terminal.m-auto.text-primary
-                            h3 Easy to Use
-                            p.lead.mb-0 Ready to use with your own content, or customize the source files!
-
-        // Image Showcases
-        section.showcase
-            .container-fluid.p-0
-                .row.g-0
-                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-1.jpg');")
-                    .col-lg-6.order-lg-1.my-auto.showcase-text
-                        h2 Fully Responsive Design
-                        p.lead.mb-0
-                            | When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!
-                .row.g-0
-                    .col-lg-6.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-2.jpg');")
-                    .col-lg-6.my-auto.showcase-text
-                        h2 Updated For Bootstrap 5
-                        p.lead.mb-0
-                            | Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!
-                .row.g-0
-                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-3.jpg');")
-                    .col-lg-6.order-lg-1.my-auto.showcase-text
-                        h2 Easy to Use & Customize
-                        p.lead.mb-0
-                            | Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!
-
-        // Testimonials
-        section.testimonials.text-center.bg-light
-            .container
-                h2.mb-5 What people are saying...
-                .row
-                    .col-lg-4
-                        .testimonial-item.mx-auto.mb-5.mb-lg-0
-                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-1.jpg', alt='...')
-                            h5 Margaret E.
-                            p.font-weight-light.mb-0 "This is fantastic! Thanks so much guys!"
-                    .col-lg-4
-                        .testimonial-item.mx-auto.mb-5.mb-lg-0
-                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-2.jpg', alt='...')
-                            h5 Fred S.
-                            p.font-weight-light.mb-0
-                                | "Bootstrap is amazing. I've been using it to create lots of super nice landing pages."
-                    .col-lg-4
-                        .testimonial-item.mx-auto.mb-5.mb-lg-0
-                            img.img-fluid.rounded-circle.mb-3(src='assets/img/testimonials-3.jpg', alt='...')
-                            h5 Sarah W.
-                            p.font-weight-light.mb-0 "Thanks so much for making these free resources available to us!"
-
-        // Call to Action
-        section#signup.call-to-action.text-white.text-center
-            .container.position-relative
-                .row.justify-content-center
-                    .col-xl-6
-                        h2.mb-4 Ready to get started? Sign up now!
-                        // Signup form
-                        
-                        // * * * * * * * * * * * * * * *
-                        // * * SB Forms Contact Form * *
-                        // * * * * * * * * * * * * * * *
-
-                        // This form is pre-integrated with SB Forms.
-                        // To make this form functional, sign up at
-                        // https://startbootstrap.com/solution/contact-forms
-                        // to get an API token!
-
-                        form.form-subscribe#contactFormFooter(data-sb-form-api-token='API_TOKEN')
-
-                            // Email address input
-                            .row
-                                .col
-                                    input#emailAddressBelow.form-control.form-control-lg(type='email' placeholder='Email Address' data-sb-validations='required,email')
-                                    .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:required')
-                                        | Email Address is required.
-                                    .invalid-feedback.text-white(data-sb-feedback='emailAddressBelow:email')
-                                        | Email Address Email is not valid.
-
-                                .col-auto
-                                    button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
-
-                            // Submit success message
-                            //
-                            // This is what your users will see when the form
-                            // has successfully submitted
-
-                            #submitSuccessMessage.d-none
-                                .text-center.mb-3
-                                    .fw-bolder Form submission successful!
-                                    p To activate this form, sign up at
-                                    a.text-white(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                            // Submit error message
-                            //
-                            // This is what your users will see when there is
-                            // an error submitting the form
-
-                            #submitErrorMessage.d-none
-                                .text-center.text-danger.mb-3 Error sending message!
-
         // Footer
-        footer.footer.bg-light
+        footer.footer.bg-light(role='contentinfo')
             .container
                 .row
                     .col-lg-6.h-100.text-center.text-lg-start.my-auto
-                        ul.list-inline.mb-2
-                            li.list-inline-item
-                                a(href='#!') About
-                            li.list-inline-item ⋅
-                            li.list-inline-item
-                                a(href='#!') Contact
-                            li.list-inline-item ⋅
-                            li.list-inline-item
-                                a(href='#!') Terms of Use
-                            li.list-inline-item ⋅
-                            li.list-inline-item
-                                a(href='#!') Privacy Policy
-                        p.text-muted.small.mb-4.mb-lg-0 &copy; Your Website 2023. All Rights Reserved.
+                        nav(aria-label='Footer navigation')
+                            ul.list-inline.mb-2
+                                li.list-inline-item
+                                    a(href='#!') About
+                                li.list-inline-item(aria-hidden='true') ⋅
+                                li.list-inline-item
+                                    a(href='#!') Contact
+                                li.list-inline-item(aria-hidden='true') ⋅
+                                li.list-inline-item
+                                    a(href='#!') Terms of Use
+                                li.list-inline-item(aria-hidden='true') ⋅
+                                li.list-inline-item
+                                    a(href='#!') Privacy Policy
+                        p.text-muted.small.mb-4.mb-lg-0 &copy; The Pizza Database 2024. All Rights Reserved.
                     .col-lg-6.h-100.text-center.text-lg-end.my-auto
-                        ul.list-inline.mb-0
-                            li.list-inline-item.me-4
-                                a(href='#!')
-                                    i.bi-facebook.fs-3
-                            li.list-inline-item.me-4
-                                a(href='#!')
-                                    i.bi-twitter.fs-3
-                            li.list-inline-item
-                                a(href='#!')
-                                    i.bi-instagram.fs-3
+                        nav(aria-label='Social media links')
+                            ul.list-inline.mb-0
+                                li.list-inline-item.me-4
+                                    a(href='#!', aria-label='Visit our Facebook page')
+                                        i.bi-facebook.fs-3(aria-hidden='true')
+                                li.list-inline-item.me-4
+                                    a(href='#!', aria-label='Visit our Twitter page')
+                                        i.bi-twitter.fs-3(aria-hidden='true')
+                                li.list-inline-item
+                                    a(href='#!', aria-label='Visit our Instagram page')
+                                        i.bi-instagram.fs-3(aria-hidden='true')
 
         // Bootstrap core JS
-        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', defer)
 
         // Core theme JS
-        script(src='js/scripts.js')
+        script(src='js/scripts.js', defer)
 
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
+        // SB Forms JS
+        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js', defer)

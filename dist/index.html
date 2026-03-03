@@ -35,26 +35,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom-masthead.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Masthead-->
     <header class="masthead">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="text-center text-white">
-                        <!-- Page heading-->
-                        <h1 class="mb-5">The Pizza Database</h1>
-                        <div class="row">
-                            <div class="col">
-                                <!-- TODO: Think to nice way to show this redirect -->
-                                <p>Click <a href="https://example.com/websapp">here</a> to visit the websapp. </p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="masthead-wrapper">
+            <div class="masthead-left">
+                <div class="masthead-title-row">
+                    <img src="assets/img/pizza-database-logo.png"
+                        alt="The Pizza Database Logo"
+                        class="masthead-logo" />
+                    <h1 class="masthead-heading">The Pizza Database</h1>
+                </div>
+                <p class="masthead-slogan">the reason we push on Fridays</p>
+                <a href="https://orange-wave-00ed54103.3.azurestaticapps.net/"
+                    class="btn btn-pizza"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit The Pizza Database web application">
+                    <span class="pizza-emoji">🍕</span> Grab a Slice
+                </a>
+            </div>
+
+            <div class="masthead-right">
+                <div class="masthead-blob">
+
+                <div class="pizza-card pizza-card--1">🍕 5+ Pizza Recipes</div>
+                <div class="pizza-card pizza-card--2">❤️ Save Favourites</div>
+                <div class="pizza-card pizza-card--3">🌍 Regional Styles</div>
+
+                    <img src="assets/img/masthead-pizza-image.png"
+                        alt="Fresh Neapolitan pizza"
+                        class="pizza-ingredients-img" />
                 </div>
             </div>
+
         </div>
     </header>
     <!-- Icons Grid-->

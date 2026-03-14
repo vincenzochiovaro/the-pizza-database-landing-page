@@ -1,0 +1,88 @@
+.showcase .showcase-img {
+    min-height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.showcase .showcase-text {
+    padding: 3rem 2rem;
+}
+
+.showcase .showcase-text h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.showcase .showcase-text .lead {
+    font-size: 1rem;
+}
+
+/* ROW 1 */
+.showcase-row-1,
+.showcase-row-1 .col-lg-6 {
+    background-color: #F8F4E9 !important;
+}
+.showcase-row-1 .showcase-img {
+    background-color: #EDE0C4 !important; 
+}
+.showcase-row-1 .showcase-text h2 { color: #1a1a1a; }
+.showcase-row-1 .showcase-text .lead { color: #8B4513; }
+
+/* ROW 2 */
+.showcase-row-2,
+.showcase-row-2 .col-lg-6 {
+    background-color: #C4702A  !important;
+}
+.showcase-row-2 .showcase-img {
+    background-color: #F0C9A0 !important; 
+}
+.showcase-row-2 .showcase-text h2 { color: #F8F4E9; }
+.showcase-row-2 .showcase-text .lead { color: #FFD9B8; }
+
+/* ROW 3 */
+.showcase-row-3,
+.showcase-row-3 .col-lg-6 {
+    background-color: #8B5A2B  !important;
+}
+.showcase-row-3 .showcase-img {
+    background-color: #E8C99A !important;
+}
+.showcase-row-3 .showcase-text h2 { color: #F8F4E9; }
+.showcase-row-3 .showcase-text .lead { color: #FFD9B8; }
+
+/*TEXT ALIGNMENT FIX FOR BIG SCREENS*/
+@media (min-width: 992px) {
+    .showcase-row-1 .order-lg-1.showcase-text,
+    .showcase-row-3 .order-lg-1.showcase-text {
+        padding-left: 20% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .showcase .showcase-text h2 {
+        font-size: 2.25rem !important;
+    }
+    .showcase .showcase-text .lead {
+        font-size: 1.2rem !important;
+    }
+    .showcase .showcase-img {
+        min-height: 400px;
+    }
+    .showcase .showcase-text {
+        padding: 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .showcase .showcase-text h2 {
+        font-size: 2.75rem !important;
+    }
+    .showcase .showcase-img {
+        min-height: 500px;
+    }
+    .showcase .showcase-text {
+        padding: 5rem;
+    }
+}
